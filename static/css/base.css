@@ -1,0 +1,16 @@
+body {
+    background-color: #f9f0e6 !important;
+    color: #73562e;
+}
+
+.custom-text-dark,
+.nav-item * {
+    color: #73562e !important;
+}
+
+.logo {
+    font-family: 'Lora', serif;
+    font-size: 36px !important;
+    font-weight: 400;
+    padding-left: 5px;
+}
