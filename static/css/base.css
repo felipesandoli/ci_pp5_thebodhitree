@@ -3,6 +3,14 @@ body {
     color: #73562e;
 }
 
+.nav-item {
+    font-family: 'Cabin', sans-serif;
+}
+
+section {
+    font-family: 'Cabin', sans-serif;
+}
+
 .custom-text-dark,
 .nav-item * {
     color: #73562e !important;
@@ -15,7 +23,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Lora', serif;
+    font-family: 'Lora', serif !important;
     letter-spacing: .2rem;
 }
 
@@ -62,11 +70,10 @@ body {
 
 /* Featured properties */
 
-.featured-property {
-    max-height: 600px;
-}
+
 
 .featured-property img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
