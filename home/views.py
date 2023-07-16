@@ -3,9 +3,9 @@ from property.models import Property
 
 def home(request):
     template = 'home/index.html'
-    properties = Property.objects.all() # CHANGE TO ONLY FEATURED PROPERTIES
+    featured_properties = Property.objects.filter(feature=True)
     context = {
-        'properties': properties
+        'properties': featured_properties
     }
 
     return render(request, template, context)
