@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <h1 class="custom-text-dark pt-5 ps-3 pb-2">Featured Properties</h1>
             {% for property in properties %}
-                <a class="text-decoration-none" href="">
+                <a class="text-decoration-none" href="{% url 'property_details' property.id %}">
                     <div class="row featured-property m-3 border-bottom shadow" style="--bs-border-opacity: .7;">
                         <div class="col-12 col-md-6 col-lg-4 p-0">
                             <img src="{{ property.featured_image.url }}" alt="">
