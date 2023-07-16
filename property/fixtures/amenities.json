@@ -1,0 +1,51 @@
+[
+    {
+        "pk": 1,
+        "model": "property.amenity",
+        "fields": {
+            "name": "swimming_pool"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "property.amenity",
+        "fields": {
+            "name": "lake_view"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "property.amenity",
+        "fields": {
+            "name": "hot_spring_bath"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "property.amenity",
+        "fields": {
+            "name": "mountain_view"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "property.amenity",
+        "fields": {
+            "name": "hiking_trails"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "property.amenity",
+        "fields": {
+            "name": "lake_access"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "property.amenity",
+        "fields": {
+            "name": "northern_lights_viewing"
+        }
+    }    
+]

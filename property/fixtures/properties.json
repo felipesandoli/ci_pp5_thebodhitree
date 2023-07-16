@@ -1,0 +1,59 @@
+[
+    {
+        "pk": 1,
+        "model": "property.property",
+        "fields": {
+            "name": "Shinrin Yoku",
+            "description": "Escape to a peaceful retreat surrounded by stunning nature. This lodge offers breathtaking views of the Japanese countryside and is nestled near picturesque mountains and serene lakes.",
+            "address": "123 Tranquil Lane",
+            "city": "Kyoto",
+            "country": "JP",
+            "single_beds": 2,
+            "double_beds": 3,
+            "rooms": 4,
+            "suites": 1,
+            "bathrooms": 3,
+            "amenities": [3,4,5],
+            "price_per_night": 200.00,
+            "featured_image": "shinrin-yoku-main.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "property.property",
+        "fields": {
+            "name": "Villa Lucinda",
+            "description": "Indulge in the beauty of Italy with this heartwarming lakefront villa. Enjoy breathtaking views of the crystal-clear lake, surrounded by abundant greenery and astonishing mountains.",
+            "address": "456 Lakeside Avenue",
+            "city": "Firenze",
+            "country": "IT",
+            "single_beds": 4,
+            "double_beds": 2,
+            "rooms": 5,
+            "suites": 2,
+            "bathrooms": 4,
+            "amenities": [1, 2, 4, 6],
+            "price_per_night": 300.00,
+            "featured_image": "villa-lucinda-main.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "property.property",
+        "fields": {
+            "name": "Gudmundur's Cabin",
+            "description": "Experience the untouched beauty of Iceland with this cozy cabin nestled amidst breathtaking landscapes. Immerse yourself in the tranquility of nature, surrounded by stunning mountains and pristine lakes.",
+            "address": "789 Nature Trail",
+            "city": "Reykjavik",
+            "country": "IS",
+            "single_beds": 2,
+            "double_beds": 1,
+            "rooms": 3,
+            "suites": 0,
+            "bathrooms": 2,
+            "amenities": [2,4,7],
+            "price_per_night": 150.00,
+            "featured_image": "gudmundur-cabin-main.jpg"
+        }
+    }
+]
