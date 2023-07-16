@@ -6,7 +6,51 @@ body {
 .custom-text-dark,
 .nav-item * {
     color: #73562e !important;
+}
+
+/* Navbar */
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: 'Lora', serif;
+    letter-spacing: .2rem;
+}
+
+.logo {
+    height: 50px;
+    width: 60px;
+}
+
+
+.circle-icon {
+    background-color: #bfa786;
+    border-radius: 50%;
+    padding: 15px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.circle-icon:hover,
+.circle-icon:active,
+.circle-icon:focus {
+    background-color: #bfa78699;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+}
+
+.nav-item:hover,
+.nav-item:active,
+.nav-item:focus {
+    font-weight: 500;
 }
 
 .logo {
@@ -20,7 +64,6 @@ body {
 
 .featured-property {
     max-height: 600px;
-    background-color: #fff;
 }
 
 .featured-property img {

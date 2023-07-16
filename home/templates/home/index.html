@@ -4,16 +4,27 @@
 
 {% block content %}
     <div class="container-fluid">
-        <h1 class="custom-text-dark">Featured Properties</h1>
+        <h1 class="custom-text-dark pt-5 ps-3 pb-2">Featured Properties</h1>
         {% for property in properties %}
-            <div class="row featured-property m-3">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <img src="{{ property.featured_image.url }}" alt="">
+            <a class="text-decoration-none" href="">
+                <div class="row featured-property m-3 border-bottom shadow" style="--bs-border-opacity: .7;">
+                    <div class="col-12 col-md-6 col-lg-4 p-0">
+                        <img src="{{ property.featured_image.url }}" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-8 p-0">
+                        <div class="col-12 px-5 bg-light py-2">
+                            <h2 class="custom-text-dark">{{ property.name }}</h2>
+                            <p class="custom-text-dark">{{ property.description }}</p>
+                        </div>
+                        <div class="row custom-text-dark px-5 pt-2">
+                            <div class="col-3"><i class="fa-sharp fa-solid fa-sterling-sign"></i> {{ property.price_per_night }} per night</div>
+                            <div class="col-3"><i class="fa-sharp fa-solid fa-bed"></i> {{ property.number_of_bedrooms }} bedrooms</div>
+                            <div class="col-3"><i class="fa-sharp fa-solid fa-bath"></i> {{ property.number_of_bathrooms }} bathrooms</div>
+                            <div class="col-3"><i class="fa-sharp fa-solid fa-location-dot"></i> {{ property.country.name }}</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-8">
-
-                </div>
-            </div>
+            </a>
         {% endfor %}
     </div>
 {% endblock %}
