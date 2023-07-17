@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 
-{% block title %} {{ block.super }} |  {% endblock %}
+{% block title %} {{ block.super }} | {{ property.name }} {% endblock %}
 
 {% block content %}
     <section>
         <div class="container-fluid">
-            <h1 class="custom-text-dark pt-5 ps-3 pb-2">Featured Properties</h1>
+            <div class="row pt-5 px-3 pb-2">
+                <div class="col-6">
+                    <h1 class="custom-text-dark">{{ property.name }}</h1>
+                </div>
+                <div class="col-6 d-flex flex-row-reverse">
+                    <a href="" class="default-btn font-logo">Book Now</a>
+                </div>
+            </div>
+            <div class="p-3 border-bottom shadow" style="--bs-border-opacity: .7;">
+                <img src="{{ property.featured_image.url }}" class="w-100 img-fluid rounded-3" alt="">
+            </div>
+            <div class="row custom-text-dark px-5 pt-2">
+                {{ property.name }}
+            </div>
         </div>
     </section>
 {% endblock %}

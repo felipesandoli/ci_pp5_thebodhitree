@@ -3,17 +3,22 @@ body {
     color: #73562e;
 }
 
-.nav-item {
-    font-family: 'Cabin', sans-serif;
+section {
+    position: absolute;
 }
 
-section {
+.nav-item {
     font-family: 'Cabin', sans-serif;
 }
 
 .custom-text-dark,
 .nav-item * {
     color: #73562e !important;
+}
+
+.font-logo {
+    font-family: 'Lora', serif !important;
+    letter-spacing: .2rem;
 }
 
 /* Navbar */
@@ -23,8 +28,6 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Lora', serif !important;
-    letter-spacing: .2rem;
 }
 
 .logo {
@@ -70,10 +73,23 @@ section {
 
 /* Featured properties */
 
-
-
 .featured-property img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Buttons */
+
+
+
+.default-btn {
+    text-align: center;
+    border: 3px solid #bfa786;
+    color: #bfa786;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 15px 10px 15px 10px;
+    margin-left: auto;
 }
