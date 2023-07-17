@@ -6,10 +6,10 @@
     <section>
         <div class="container-fluid">
             <div class="row pt-5 px-3 pb-2">
-                <div class="col-6">
+                <div class="col-9">
                     <h1 class="custom-text-dark">{{ property.name }}</h1>
                 </div>
-                <div class="col-6 d-flex flex-row-reverse">
+                <div class="col-3 d-flex flex-row-reverse">
                     <a href="" class="default-btn font-logo">Book Now</a>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                     <p class="custom-text-dark description ps-3">{{ property.description }}</p>
                 </div>
                 <div class="col-12 col-md-6 custom-bg-dark">
-
+                    <div class="col">{{ property.address }}, {{ property.city }}, {{ property.country.name }}</div>
                 </div>
             </div>
         </div>

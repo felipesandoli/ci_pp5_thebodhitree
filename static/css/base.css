@@ -94,13 +94,21 @@ h1, h2, h3 {
 
 .default-btn {
     text-align: center;
-    border: 3px solid #bfa786;
+    border: 5px solid #bfa786;
     color: #bfa786;
     font-weight: 600;
     font-size: 1.2rem;
     text-decoration: none;
     padding: 15px 10px 15px 10px;
     margin-left: auto;
+    transition: 0.5s ease;
+}
+
+.default-btn:hover,
+.default-btn:active,
+.default-btn:focus {
+    color: #f9f0e6;
+    background-color: #bfa786;
 }
 
 /* Description text */
