@@ -17,7 +17,13 @@
                 <img src="{{ property.featured_image.url }}" class="w-100 img-fluid rounded-3" alt="">
             </div>
             <div class="row custom-text-dark px-5 pt-2">
-                {{ property.name }}
+                <div class="col-12 col-md-6">
+                    <h2>The Property</h2>
+                    <p class="custom-text-dark description ps-3">{{ property.description }}</p>
+                </div>
+                <div class="col-12 col-md-6 custom-bg-dark">
+
+                </div>
             </div>
         </div>
     </section>

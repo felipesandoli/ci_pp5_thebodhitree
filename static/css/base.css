@@ -11,6 +11,10 @@ section {
     font-family: 'Cabin', sans-serif;
 }
 
+.custom-text-ligh {
+    color: #bfa786;
+}
+
 .custom-text-dark,
 .nav-item * {
     color: #73562e !important;
@@ -19,6 +23,12 @@ section {
 .font-logo {
     font-family: 'Lora', serif !important;
     letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 /* Navbar */
@@ -56,6 +66,7 @@ section {
 
 .nav-item {
     font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 .nav-item:hover,
@@ -81,8 +92,6 @@ section {
 
 /* Buttons */
 
-
-
 .default-btn {
     text-align: center;
     border: 3px solid #bfa786;
@@ -92,4 +101,15 @@ section {
     text-decoration: none;
     padding: 15px 10px 15px 10px;
     margin-left: auto;
+}
+
+/* Description text */
+
+.description {
+    text-align: justify;
+    letter-spacing: 2px;
+}
+
+.custom-bg-dark {
+    background-color: #bfa786;
 }
