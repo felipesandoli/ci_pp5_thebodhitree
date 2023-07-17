@@ -10,7 +10,7 @@ class Amenity(models.Model):
     name = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.name
+        return self.name.replace('_', ' ')
 
 
 class Property(models.Model):

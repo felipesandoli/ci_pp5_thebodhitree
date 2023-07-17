@@ -11,8 +11,8 @@ section {
     font-family: 'Cabin', sans-serif;
 }
 
-.custom-text-ligh {
-    color: #bfa786;
+.custom-text-light {
+    color: #f9f0e6;
 }
 
 .custom-text-dark,
@@ -115,6 +115,9 @@ h1, h2, h3 {
 
 .description {
     text-align: justify;
+}
+
+.text-space {
     letter-spacing: 2px;
 }
 

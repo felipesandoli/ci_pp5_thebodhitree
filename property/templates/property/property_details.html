@@ -19,10 +19,24 @@
             <div class="row custom-text-dark px-5 pt-2">
                 <div class="col-12 col-md-6">
                     <h2>The Property</h2>
-                    <p class="custom-text-dark description ps-3">{{ property.description }}</p>
+                    <p class="custom-text-dark description text-space ps-3">{{ property.description }}</p>
                 </div>
-                <div class="col-12 col-md-6 custom-bg-dark">
-                    <div class="col">{{ property.address }}, {{ property.city }}, {{ property.country.name }}</div>
+                <div class="col-12 col-md-6 p-3 custom-bg-dark custom-text-light rounded-1 shadow-lg text-space text-uppercase align-middle">
+                    <div class="col pb-3">
+                            <i class="fa-sharp fa-solid fa-location-dot"></i> {{ property.address }}, {{ property.city }}, {{ property.country.name }}
+                    </div>
+                    <div class="col pb-3">
+                        <i class="fa-sharp fa-solid fa-bed"></i> {{ property.rooms }} bedrooms and {{ property.suites }} suite{% if property.suites > 1 %}s{% endif %} with {{ property.single_beds }} single bed{% if property.single_beds > 1 %}s{% endif %} and {{ property.double_beds }} double bed{% if property.double_beds > 1 %}s{% endif %}
+                    </div>
+                    <div class="col pb-3">
+                        <i class="fa-sharp fa-solid fa-bath"></i> {{ property.number_of_bathrooms }} bathrooms
+                    </div>
+                    <div class="col pb-3">
+                        <i class="fa-sharp fa-solid fa-check"></i> {% for amenity in amenities %}{{ amenity }}{% if not forloop.last %}, {% endif %} {% endfor %}
+                    </div>
+                    <div class="col pb-3">
+                        <i class="fa-sharp fa-solid fa-sterling-sign"></i> {{ property.price_per_night }} per night
+                    </div>
                 </div>
             </div>
         </div>

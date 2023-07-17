@@ -5,8 +5,10 @@ from .models import Property
 def property_details(request, id):
     """Displays property full details"""
     property = get_object_or_404(Property, pk=id)
+    amenities = property.amenities.all()
     template = 'property/property_details.html'
     context = {
-        'property': property
+        'property': property,
+        'amenities': amenities
     }
     return render(request, template, context)
