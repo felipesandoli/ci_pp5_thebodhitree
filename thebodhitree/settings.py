@@ -41,6 +41,9 @@ INSTALLED_APPS = [
 
     # Other apps
     'django_countries',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     # My apps
     'home',
@@ -77,6 +80,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'thebodhitree.wsgi.application'
+
+LOGIN_REDIRECT_URL = '/'
 
 
 # Database
