@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-  <body>
-    {% block body %}
-    {% block content %}
+{% block content %}
+  <div class="col-12 col-md-8 col-lg-6 m-auto p-5 custom-text-dark">
+    {% block inner_content %}
     {% endblock %}
-    {% endblock %}
-    {% block extra_body %}
-    {% endblock %}
-  </body>
-</html>
+  </div>
+{% endblock %}

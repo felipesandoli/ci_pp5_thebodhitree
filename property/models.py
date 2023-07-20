@@ -37,7 +37,7 @@ class Property(models.Model):
     is_available = models.BooleanField(default=True)
     price_per_night = models.DecimalField(max_digits=6, decimal_places=2)
     # Featured properties to be displayed on home page
-    feature = models.BooleanField(default=False)
+    feature = models.BooleanField(default=False) # is_featured
     # Main property image
     featured_image = models.ImageField()
 
