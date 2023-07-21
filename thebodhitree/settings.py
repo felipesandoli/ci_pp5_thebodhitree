@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # My apps
     'home',
     'property',
+    'booking',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"

@@ -43,10 +43,10 @@ class Property(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def number_of_bedrooms(self):
         return self.rooms + self.suites
-    
+
     def number_of_bathrooms(self):
         return self.bathrooms + self.suites
 
