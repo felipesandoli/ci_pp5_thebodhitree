@@ -2,5 +2,41 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    {{ form | crispy }}
+    <form action="{% url 'booking' property.id %}" method="POST">
+        {% csrf_token %}
+        <div class="row mt-3">
+            <h1 class="custom-text-dark">Create a booking</h1>
+            <div class="col-12 col-md-6">
+                <div class="row p-2">
+                    <div class="col">
+                        <h2 class="custom-text-dark">Contact Information</h1>
+                        {{ form.full_name | as_crispy_field }}
+                        {{ form.email | as_crispy_field  }}
+                        {{ form.phone_number | as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col">
+                        <h2 class="custom-text-dark">Address</h2>
+                        {{ form.address | as_crispy_field }}
+                        {{ form.city | as_crispy_field }}
+                        {{ form.country | as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col">
+                        <h2 class="custom-text-dark">About your Stay</h2>
+                        {{ form.checkin_date | as_crispy_field }}
+                        {{ form.checkout_date | as_crispy_field }}
+                        {{ form.number_of_guests | as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <div class="col">
+                        <button class="submit-btn" type="submit">Proceed to payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 {% endblock %}

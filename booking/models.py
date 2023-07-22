@@ -16,6 +16,7 @@ class Booking(models.Model):
     country = CountryField(null=False, blank=False)
     checkin_date = models.DateField(null=False, blank=False)
     checkout_date = models.DateField(null=False, blank=False)
+    number_of_guests = models.IntegerField(null=False, blank=False, default=0)
     property = models.ForeignKey(
         Property, null=False, blank=False, on_delete=models.CASCADE
     )
@@ -33,6 +34,12 @@ class Booking(models.Model):
         Generate a random, unique booking number using UUID
         """
         return uuid.uuid4().hex.upper()
+
+    # def update_price_total(self):
+    #     """Calculates price total based on stay duration"""
+    #     length_of_stay = self.checkout_date - self.checkin_date
+    #     self.price_total = self.property.price_per_night * length_of_stay
+    #     self.save()
 
     def save(self, *args, **kwargs):
         """
