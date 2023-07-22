@@ -6,19 +6,7 @@ from .forms import BookingForm
 # from property details page property id is passed as a parameter
 def booking(request, property_id=None):
     """Diplays form for creating a booking and handles form submission"""
-    if request.method == 'GET':
-        form = BookingForm()
-        property = None
-        if property_id:
-            property = get_object_or_404(Property, pk=property_id)
-        template = 'booking/booking.html'
-        context = {
-            'form': form,
-            'property': property
-        }
-
-        return render(request, template, context)
-    else:
+    if request.method == 'POST':
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -43,3 +31,15 @@ def booking(request, property_id=None):
         else:
             # error message
             pass
+    else:
+        form = BookingForm()
+        property = None
+        if property_id:
+            property = get_object_or_404(Property, pk=property_id)
+        template = 'booking/booking.html'
+        context = {
+            'form': form,
+            'property': property
+        }
+
+        return render(request, template, context)
