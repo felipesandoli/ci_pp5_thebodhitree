@@ -21,6 +21,7 @@ class Booking(models.Model):
     price_total = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0
     )
+    created_at = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.booking_number
