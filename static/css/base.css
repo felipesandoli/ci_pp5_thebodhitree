@@ -1,6 +1,7 @@
 body {
     background-color: #f9f0e6 !important;
     color: #73562e;
+    font-family: 'Cabin', sans-serif;
 }
 
 section {
@@ -29,6 +30,7 @@ section {
 h1, h2, h3 {
     text-transform: uppercase;
     letter-spacing: 3px;
+    font-family: 'Cabin', sans-serif;
 }
 
 /* Navbar */
@@ -100,6 +102,8 @@ h1, h2, h3 {
 
 .submit-btn {
     text-align: center;
+    text-transform: uppercase;
+    font-family: 'Cabin', sans-serif;
     background-color: #73562e;
     border-radius: 3px;
     color: #f9f0e6;
@@ -119,6 +123,8 @@ h1, h2, h3 {
 
 .action-btn {
     text-align: center;
+    text-transform: uppercase;
+    font-family: 'Cabin', sans-serif;
     border: 5px solid #bfa786;
     color: #bfa786;
     font-weight: 600;
