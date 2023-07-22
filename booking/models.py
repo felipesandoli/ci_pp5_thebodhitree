@@ -37,7 +37,8 @@ class Booking(models.Model):
 
     def update_price_total(self):
         """Calculates price total based on stay duration"""
-        # price is calculated by number of nights, time delta gives number of days, so take away 1
+        # price is calculated by number of nights,
+        # time delta gives number of days, so take away 1
         length_of_stay = (self.checkout_date - self.checkin_date).days - 1
         print(length_of_stay)
         self.price_total = self.property.price_per_night * length_of_stay

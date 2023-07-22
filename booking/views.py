@@ -29,7 +29,9 @@ def booking(request, property_id=None):
             'checkin_date': request.POST['checkin_date'],
             'checkout_date': request.POST['checkout_date'],
             'number_of_guests': request.POST['number_of_guests'],
-            'property': get_object_or_404(Property, name=request.POST['property']),
+            'property': get_object_or_404(
+                Property, name=request.POST['property']
+            ),
         }
         print(form_data)
         booking_form = BookingForm(form_data)
