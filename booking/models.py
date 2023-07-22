@@ -1,11 +1,12 @@
 from django.db import models
 from django_countries.fields import CountryField
 from property.models import Property
+import uuid
 
 
 class Booking(models.Model):
     booking_number = models.CharField(
-        max_length=16, null=False, editable=False
+        max_length=32, null=False, editable=False
     )
     full_name = models.CharField(max_length=120, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -25,3 +26,19 @@ class Booking(models.Model):
 
     def __str__(self):
         return self.booking_number
+
+    # From boutique ado
+    def _generate_booking_number(self):
+        """
+        Generate a random, unique booking number using UUID
+        """
+        return uuid.uuid4().hex.upper()
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the booking number
+        if not yet set
+        """
+        if not self.booking_number:
+            self.booking_number = self._generate_booking_number()
+        super().save(*args, **kwargs)
