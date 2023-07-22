@@ -20,6 +20,7 @@ class BookingForm(forms.ModelForm):
             'checkin_date',
             'checkout_date',
             'number_of_guests',
+            'property',
         ]
         widgets = {
             'checkin_date': DateInput(),

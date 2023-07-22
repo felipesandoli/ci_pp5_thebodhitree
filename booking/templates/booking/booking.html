@@ -2,40 +2,39 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <form action="{% url 'booking' property.id %}" method="POST">
+    <form action="{% url 'booking' %}" method="POST">
         {% csrf_token %}
         <div class="row mt-3">
             <h1 class="custom-text-dark">Create a booking</h1>
             <div class="col-12 col-md-6">
-                <div class="row p-2">
-                    <div class="col">
-                        <h2 class="custom-text-dark">Contact Information</h1>
-                        {{ form.full_name | as_crispy_field }}
-                        {{ form.email | as_crispy_field  }}
-                        {{ form.phone_number | as_crispy_field }}
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col">
-                        <h2 class="custom-text-dark">Address</h2>
-                        {{ form.address | as_crispy_field }}
-                        {{ form.city | as_crispy_field }}
-                        {{ form.country | as_crispy_field }}
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col">
-                        <h2 class="custom-text-dark">About your Stay</h2>
-                        {{ form.checkin_date | as_crispy_field }}
-                        {{ form.checkout_date | as_crispy_field }}
-                        {{ form.number_of_guests | as_crispy_field }}
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col">
-                        <button class="submit-btn" type="submit">Proceed to payment</button>
-                    </div>
-                </div>
+                <fieldset class="row p-2">
+                    <h2 class="custom-text-dark">Contact Information</h1>
+                    {{ form.full_name | as_crispy_field }}
+                    {{ form.email | as_crispy_field  }}
+                    {{ form.phone_number | as_crispy_field }}
+                </fieldset>
+                <fieldset class="p-2">
+                    <h2 class="custom-text-dark">Address</h2>
+                    {{ form.address | as_crispy_field }}
+                    {{ form.city | as_crispy_field }}
+                    {{ form.country | as_crispy_field }}
+                </fieldset>
+                <fieldset class="row p-2">
+                    <h2 class="custom-text-dark">About your Stay</h2>
+                    {{ form.checkin_date | as_crispy_field }}
+                    {{ form.checkout_date | as_crispy_field }}
+                    {{ form.number_of_guests | as_crispy_field }}
+                    <!-- if booking page accessed from property details view, autopopulates the property field with parameter passed to the view -->
+                    {% if property %}
+                        <input type="hidden" name="property" value="{{ property }}">
+                    <!-- else displays input for selecting the property -->
+                    {% else %}
+                        {{ form.property | as_crispy_field }}
+                    {% endif %}
+                </fieldset>
+                <fieldset class="row p-2">
+                    <button class="submit-btn" type="submit">Proceed to payment</button>
+                </fieldset>
             </div>
         </div>
     </form>
