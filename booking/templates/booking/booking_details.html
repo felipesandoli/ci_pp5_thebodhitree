@@ -7,9 +7,9 @@
         <div class="container-fluid">
             <h1 class="custom-text-dark pt-5 ps-3 pb-2">You are staying at</h1>
             <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 border-bottom shadow">
                     <a class="text-decoration-none" href="{% url 'property_details' booking.property.id %}">
-                        <div class="row featured-property m-3 border-bottom shadow" style="--bs-border-opacity: .7;">
+                        <div class="row featured-property m-3 ">
                             <div class="col-12 p-0">
                                 <img src="{{ booking.property.featured_image.url }}" alt="">
                             </div>
@@ -73,6 +73,14 @@
                     <div class="row pb-3">
                         <div class="col-3"><strong>Amount Paid:</strong></div>
                         <div class="col-9">{{ booking.price_total }}</div>
+                    </div>
+                    <div class="row pb-3 mt-3">
+                        <div class="col-6 h-auto">
+                            <a href="" class="action-btn">Edit personal details</a>
+                        </div>
+                        <div class="col-6 h-auto">
+                            <a href="" class="action-btn">Delete Booking</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -103,6 +103,7 @@ h1, h2, h3 {
 .submit-btn {
     text-align: center;
     text-transform: uppercase;
+    text-decoration: none;
     font-family: 'Cabin', sans-serif;
     background-color: #73562e;
     border-radius: 3px;
