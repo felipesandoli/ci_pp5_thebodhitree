@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ block.super }} | home {% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container-fluid">
+            <h1 class="custom-text-dark pt-5 ps-3 pb-2">You are staying at</h1>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <a class="text-decoration-none" href="{% url 'property_details' booking.property.id %}">
+                        <div class="row featured-property m-3 border-bottom shadow" style="--bs-border-opacity: .7;">
+                            <div class="col-12 p-0">
+                                <img src="{{ booking.property.featured_image.url }}" alt="">
+                            </div>
+                            <div class="col-12 p-0">
+                                <div class="col-12 px-5 bg-light py-2">
+                                    <h2 class="custom-text-dark">{{ booking.property.name }}</h2>
+                                    <p class="custom-text-dark">{{ booking.property.description }}</p>
+                                </div>
+                                <div class="row custom-text-dark px-5 pt-2">
+                                    <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-sterling-sign"></i> {{ booking.property.price_per_night }} per night</div>
+                                    <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-bed"></i> {{ booking.property.number_of_bedrooms }} bedrooms</div>
+                                    <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-bath"></i> {{ booking.property.number_of_bathrooms }} bathrooms</div>
+                                    <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-location-dot"></i> {{ booking.property.city }}, {{ booking.property.country.name }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 p-3 custom-text-dark booking-details">
+                    <h2>Booking Details</h2>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Booking Number:</strong></div>
+                        <div class="col-8"><p>{{ booking.booking_number }}</p></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Full Name:</strong></div>
+                        <div class="col-8">{{ booking.full_name }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Email Address:</strong></div>
+                        <div class="col-8">{{ booking.email }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Phone Number:</strong></div>
+                        <div class="col-8">{{ booking.phone_number }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Address:</strong></div>
+                        <div class="col-8">{{ booking.address }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>City:</strong></div>
+                        <div class="col-8">{{ booking.city }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Country:</strong></div>
+                        <div class="col-8">{{ booking.country.name }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Check In Date:</strong></div>
+                        <div class="col-8">{{ booking.checkin_date }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Check Out Date:</strong></div>
+                        <div class="col-8">{{ booking.checkout_date }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Number of Guests:</strong></div>
+                        <div class="col-8">{{ booking.number_of_guests }}</div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-4"><strong>Amount Paid:</strong></div>
+                        <div class="col-8">{{ booking.price_total }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

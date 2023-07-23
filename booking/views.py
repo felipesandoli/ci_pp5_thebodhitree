@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from property.models import Property
 from .models import Booking
 from .forms import BookingForm
@@ -48,12 +49,22 @@ def booking(request, property_id=None):
         return render(request, template, context)
 
 
-def my_booking(request):
+@login_required
+def my_bookings(request):
     """Displays to an authenticated user bookings created by them"""
-    if request.user.is_authenticated:
-        bookings = Booking.objects.filter(user=request.user)
-        template = 'booking/my_bookings.html'
-        context = {
-            'bookings': bookings,
-        }
-        return render(request, template, context)
+    bookings = Booking.objects.filter(user=request.user)
+    template = 'booking/my_bookings.html'
+    context = {
+        'bookings': bookings,
+    }
+    return render(request, template, context)
+
+
+def booking_details(request, booking_number):
+    """Displays details about a specific booking"""
+    booking = get_object_or_404(Booking, booking_number=booking_number)
+    template = 'booking/booking_details.html'
+    context = {
+        'booking': booking,
+    }
+    return render(request, template, context)

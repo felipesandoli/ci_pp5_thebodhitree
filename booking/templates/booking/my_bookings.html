@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <h1 class="custom-text-dark pt-5 ps-3 pb-2">My Bookings</h1>
             {% for booking in bookings %}
-                <a class="text-decoration-none" href="">
+                <a class="text-decoration-none" href="{% url 'booking_details' booking.booking_number %}">
                     <div class="row featured-property m-3 border-bottom shadow" style="--bs-border-opacity: .7;">
                         <div class="col-12 col-md-6 col-lg-4 p-0">
                             <img src="{{ booking.property.featured_image.url }}" alt="">

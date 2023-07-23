@@ -155,3 +155,9 @@ h1, h2, h3 {
 .custom-bg-dark {
     background-color: #bfa786;
 }
+
+/* Booking */
+
+.booking-details {
+    overflow: auto;
+}
