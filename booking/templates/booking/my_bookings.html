@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ block.super }} | My Bookings {% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container-fluid">
+            <h1 class="custom-text-dark pt-5 ps-3 pb-2">My Bookings</h1>
+            {% for booking in bookings %}
+                <a class="text-decoration-none" href="">
+                    <div class="row featured-property m-3 border-bottom shadow" style="--bs-border-opacity: .7;">
+                        <div class="col-12 col-md-6 col-lg-4 p-0">
+                            <img src="{{ booking.property.featured_image.url }}" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-8 bg-light py-2 px-5">
+                            <h2 class="custom-text-dark">{{ booking.property.name }}</h2>
+                            <div class="row">
+                                <div class="col-4">
+                                    <p class="custom-text-dark"><strong>Booking Number:</strong></p>
+                                </div>
+                                <div class="col-8">
+                                    <p class="custom-text-dark">{{ booking.booking_number }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <p class="custom-text-dark"><strong>Check-in Date:</strong></p>
+                                </div>
+                                <div class="col-8">
+                                    <p class="custom-text-dark">{{ booking.checkin_date }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <p class="custom-text-dark"><strong>Check-out Date:</strong></p>
+                                </div>
+                                <div class="col-8">
+                                    <p class="custom-text-dark">{{ booking.checkout_date }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <p class="custom-text-dark"><strong>Total Paid:</strong></p>
+                                </div>
+                                <div class="col-8">
+                                    <p class="custom-text-dark">{{ booking.price_total }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

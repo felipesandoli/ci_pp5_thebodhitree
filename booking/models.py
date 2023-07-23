@@ -25,7 +25,9 @@ class Booking(models.Model):
         max_digits=6, decimal_places=2, null=False, default=0
     )
     created_at = models.DateField(auto_now_add=True)
-    user = models.ForeignKey(User, null=True, default=None, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, null=True, default=None, on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return self.booking_number

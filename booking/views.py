@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from property.models import Property
+from .models import Booking
 from .forms import BookingForm
 
 
@@ -19,7 +20,7 @@ def booking(request, property_id=None):
             'number_of_guests': request.POST['number_of_guests'],
             'property': get_object_or_404(
                 Property, name=request.POST['property']
-            ),                
+            ),
         }
         print(form_data)
         booking_form = BookingForm(form_data)
@@ -44,4 +45,15 @@ def booking(request, property_id=None):
             'property': property
         }
 
+        return render(request, template, context)
+
+
+def my_booking(request):
+    """Displays to an authenticated user bookings created by them"""
+    if request.user.is_authenticated:
+        bookings = Booking.objects.filter(user=request.user)
+        template = 'booking/my_bookings.html'
+        context = {
+            'bookings': bookings,
+        }
         return render(request, template, context)
