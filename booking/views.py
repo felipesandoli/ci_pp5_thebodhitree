@@ -68,3 +68,19 @@ def booking_details(request, booking_number):
         'booking': booking,
     }
     return render(request, template, context)
+
+
+def booking_search(request):
+    """Displays a search form for users without an account
+    to find their bookings and handles booking search submission"""
+    if request.method == 'POST':
+        booking_number = request.POST['booking_number'].split()[0]
+        booking = Booking.objects.filter(booking_number=booking_number)
+        if booking:
+            print(booking)
+            return redirect('booking_details', booking_number=booking_number)
+        else:
+            return redirect('booking_search')
+    else:
+        template = 'booking/booking_search.html'
+        return render(request, template)

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ block.super }} | home {% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-12">
+                <h1 class="custom-text-dark pt-5 ps-3 pb-2">Retrieve My Booking</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9 col-md-6 m-auto bg-light border-bottom shadow">
+                <!-- From bootstrap -->
+                <form method="POST" class="custom-text-dark py-3">
+                    {% csrf_token %}
+                    <div class="col-8 m-auto py-3">
+                      <label for="booking-number" class="form-label">Please enter your booking reference number:</label>
+                      <input type="text" class="form-control" id="booking-number" placeholder="booking number" name="booking_number">
+                    </div>
+                    <div class="col-8 m-auto py-3">
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+{% endblock %}

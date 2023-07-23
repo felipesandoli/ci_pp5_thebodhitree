@@ -8,7 +8,11 @@
     </li>
     <hr class="d-m-none m-0">
     <li class="nav-item nav-hover">
-        <a class="nav-link" href="{% url 'my_bookings' %}">{% if user.is_authenticated %}My Bookings{% else %}Retrieve My Booking{% endif %}</a>
+        {% if user.is_authenticated %}
+            <a class="nav-link" href="{% url 'my_bookings' %}">My Bookings</a>
+        {% else %}
+            <a class="nav-link" href="{% url 'booking_search' %}">Retrieve My Booking</a>
+        {% endif %}
     </li>
     <hr class="d-m-none m-0">
     <li class="nav-item dropdown">
