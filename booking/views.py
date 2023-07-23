@@ -19,12 +19,14 @@ def booking(request, property_id=None):
             'number_of_guests': request.POST['number_of_guests'],
             'property': get_object_or_404(
                 Property, name=request.POST['property']
-            ),
+            ),                
         }
         print(form_data)
         booking_form = BookingForm(form_data)
         if booking_form.is_valid():
             booking = booking_form.save(commit=False)
+            if request.user.is_authenticated:
+                booking.user = request.user
             booking.update_price_total()
             booking.save()
             return redirect('home')
