@@ -31,7 +31,9 @@ def booking(request, property_id=None):
                 booking.user = request.user
             booking.update_price_total()
             booking.save()
-            return redirect('home')
+            return redirect(
+                'booking_details', booking_number=booking.booking_number
+            )
         else:
             # error message
             pass
