@@ -23,7 +23,6 @@ def booking(request, property_id=None):
                 Property, name=request.POST['property']
             ),
         }
-        print(form_data)
         booking_form = BookingForm(form_data)
         if booking_form.is_valid():
             booking = booking_form.save(commit=False)
@@ -86,3 +85,36 @@ def booking_search(request):
     else:
         template = 'booking/booking_search.html'
         return render(request, template)
+
+ 
+def edit_booking(request, booking_number):
+    """
+    Displays form for editing guest personal information only.
+    """
+    if request.method == 'POST':
+        booking = get_object_or_404(Booking, booking_number=booking_number)
+        form = BookingForm(request.POST)
+        full_name = request.POST['full_name']
+        email = request.POST['email']
+        phone_number = request.POST['phone_number']
+        address = request.POST['address']
+        city = request.POST['city']
+        country = request.POST['country']
+        if form.is_valid:
+            booking.full_name = full_name
+            booking.email = email
+            booking.phone_number = phone_number
+            booking.address = address
+            booking.city = city
+            booking.country = country
+            booking.save()
+        return redirect('booking_details', booking_number=booking_number)
+    else:
+        booking = get_object_or_404(Booking, booking_number=booking_number)
+        booking_form = BookingForm(instance=booking)
+        template = 'booking/edit_booking.html'
+        context = {
+            'booking': booking,
+            'form': booking_form,
+        }
+        return render(request, template, context)

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{% url 'edit_booking' booking.booking_number %}" method="POST">
+        {% csrf_token %}
+        <div class="row mt-3 custom-text-dark">
+            <h1 class="custom-text-dark">Update your personal information</h1>
+            <div class="col-12 col-md-6 m-auto bg-light border-bottom shadow">
+                <fieldset class="row p-2">
+                    <h2 class="custom-text-dark">Contact Information</h1>
+                    {{ form.full_name | as_crispy_field }}
+                    {{ form.email | as_crispy_field  }}
+                    {{ form.phone_number | as_crispy_field }}
+                </fieldset>
+                <fieldset class="p-2">
+                    <h2 class="custom-text-dark">Address</h2>
+                    {{ form.address | as_crispy_field }}
+                    {{ form.city | as_crispy_field }}
+                    {{ form.country | as_crispy_field }}
+                </fieldset>
+                    <div class="d-none">
+                        {{ form.checkin_date }}
+                        {{ form.checkout_date }}
+                        {{ form.number_of_guests }}
+                        {{ form.property }}
+                    </div>
+                <fieldset class="row p-2">
+                    <button class="submit-btn" type="submit">Save</button>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+{% endblock %}
