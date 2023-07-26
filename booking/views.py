@@ -86,7 +86,7 @@ def booking_search(request):
         template = 'booking/booking_search.html'
         return render(request, template)
 
- 
+
 def edit_booking(request, booking_number):
     """
     Displays form for editing guest personal information only.
@@ -116,5 +116,20 @@ def edit_booking(request, booking_number):
         context = {
             'booking': booking,
             'form': booking_form,
+        }
+        return render(request, template, context)
+
+
+def cancel_booking(request, booking_number):
+    """Asks for confirmation and handles booking cancelation"""
+    if request.method == 'POST':
+        booking = get_object_or_404(Booking, booking_number=booking_number)
+        booking.delete()
+        return redirect('home')
+    else:
+        booking = get_object_or_404(Booking, booking_number=booking_number)
+        template = 'booking/cancel_booking.html'
+        context = {
+            'booking': booking,
         }
         return render(request, template, context)

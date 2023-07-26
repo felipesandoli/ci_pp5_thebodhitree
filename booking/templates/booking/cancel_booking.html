@@ -5,7 +5,7 @@
 {% block content %}
     <section>
         <div class="container-fluid">
-            <h1 class="custom-text-dark pt-5 ps-3 pb-2">You are staying at</h1>
+            <h1 class="text-danger pt-5 ps-3 pb-2">You are canceling your stay at</h1>
             <div class="row">
                 <div class="col-12 col-md-6 border-bottom shadow">
                     <a class="text-decoration-none" href="{% url 'property_details' booking.property.id %}">
@@ -35,30 +35,6 @@
                         <div class="col-9">{{ booking.booking_number }}</div>
                     </div>
                     <div class="row pb-3">
-                        <div class="col-3"><strong>Full Name:</strong></div>
-                        <div class="col-9">{{ booking.full_name }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Email Address:</strong></div>
-                        <div class="col-9">{{ booking.email }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Phone Number:</strong></div>
-                        <div class="col-9">{{ booking.phone_number }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Address:</strong></div>
-                        <div class="col-9">{{ booking.address }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>City:</strong></div>
-                        <div class="col-9">{{ booking.city }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Country:</strong></div>
-                        <div class="col-9">{{ booking.country.name }}</div>
-                    </div>
-                    <div class="row pb-3">
                         <div class="col-3"><strong>Check In Date:</strong></div>
                         <div class="col-9">{{ booking.checkin_date }}</div>
                     </div>
@@ -75,11 +51,14 @@
                         <div class="col-9">{{ booking.price_total }}</div>
                     </div>
                     <div class="row pb-3 mt-3">
-                        <div class="col-6 h-auto">
-                            <a href="{% url 'edit_booking' booking.booking_number %}" class="action-btn">Edit personal details</a>
+                        <div class="col-6">
+                            <p><strong>Are you sure you would like to cancel your stay?</strong></p>
                         </div>
                         <div class="col-6 h-auto">
-                            <a href="{% url 'cancel_booking' booking.booking_number %}" class="action-btn">Cancel Booking</a>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <button type="submit" class="submit-btn">Cancel Booking</button>
+                            </form>
                         </div>
                     </div>
                 </div>
