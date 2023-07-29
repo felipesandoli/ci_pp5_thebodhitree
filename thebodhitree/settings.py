@@ -16,9 +16,9 @@ import dj_database_url
 
 if os.path.exists("env.py"):
     import env
-    development = True
+    DEVELOPMENT = True
 else:
-    development = False
+    DEVELOPMENT = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-zgg5f-0yy8+t^-!aonylz@oc@@idt*c^%lm72&*#(q6e*hpcb%
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['the-bodhi-tree-b9b27b51f217.herokuapp.com']
+ALLOWED_HOSTS = ['the-bodhi-tree-b9b27b51f217.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

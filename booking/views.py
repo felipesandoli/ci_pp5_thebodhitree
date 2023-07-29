@@ -34,7 +34,7 @@ def booking(request, property_id=None):
             booking.save()
             stripe.api_key = settings.STRIPE_SECRET_KEY
             # Change domain if production or development
-            if settings.development:
+            if settings.DEVELOPMENT:
                 YOUR_DOMAIN = 'http://127.0.0.1:8000/'
             else:
                 YOUR_DOMAIN = 'https://the-bodhi-tree-b9b27b51f217.herokuapp.com/'
