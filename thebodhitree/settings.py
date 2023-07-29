@@ -31,10 +31,12 @@ if os.path.exists("env.py"):
 else:
     development = False
 
-if development:
-    DEBUG = True
-else:
-    DEBUG = False
+# if development:
+#     DEBUG = True
+# else:
+#     DEBUG = False
+DEBUG = True
+
 
 ALLOWED_HOSTS = ['https://the-bodhi-tree-04fc7f009761.herokuapp.com/', '127.0.0.1']
 
