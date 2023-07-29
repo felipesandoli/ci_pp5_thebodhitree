@@ -32,8 +32,28 @@
                     {{ form.number_of_guests | as_crispy_field }}
                 </fieldset>
                 <fieldset class="row p-2">
-                    <button class="submit-btn" type="submit">Proceed to payment</button>
+                    <button class="submit-btn" type="submit" id="payment-btn">Proceed to payment</button>
                 </fieldset>
+            </div>
+            <div class="col-12 col-md-6 border-bottom shadow my-3">
+                <h2 class="custom-text-dark">You are booking a stay at:</h2>
+                <div class="row featured-property m-3 ">
+                    <div class="col-12 p-0">
+                        <img src="{{ property.featured_image.url }}" alt="">
+                    </div>
+                    <div class="col-12 p-0">
+                        <div class="col-12 px-5 bg-light py-2">
+                            <h2 class="custom-text-dark">{{ property.name }}</h2>
+                            <p class="custom-text-dark">{{ property.description }}</p>
+                        </div>
+                        <div class="row custom-text-dark px-5 pt-2">
+                            <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-sterling-sign"></i> {{ property.price_per_night }} per night</div>
+                            <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-bed"></i> {{ property.number_of_bedrooms }} bedrooms</div>
+                            <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-bath"></i> {{ property.number_of_bathrooms }} bathrooms</div>
+                            <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-location-dot"></i> {{ property.city }}, {{ property.country.name }}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </form>

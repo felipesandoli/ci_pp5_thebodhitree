@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+import stripe
 from property.models import Property
 from .models import Booking
 from .forms import BookingForm
@@ -30,12 +33,30 @@ def booking(request, property_id=None):
                 booking.user = request.user
             booking.update_price_total()
             booking.save()
-            return redirect(
-                'booking_details', booking_number=booking.booking_number
+            stripe.api_key = settings.STRIPE_SECRET_KEY
+            # from stripe documentation
+            YOUR_DOMAIN = 'http://127.0.0.1:8000/'
+            checkout_session = stripe.checkout.Session.create(
+                line_items=[
+                    {
+                        # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                        'price_data': {
+                            'currency': 'gbp',
+                            'product_data': {
+                                'name': booking.property.name
+                            },
+                            'unit_amount_decimal': booking.price_total*100,
+                        },
+                        'quantity': 1,
+                    },
+                ],
+                mode='payment',
+                success_url=YOUR_DOMAIN + f'booking/booking_details/{booking.booking_number}',
+                cancel_url=YOUR_DOMAIN + f'booking/{booking.property.id}',
             )
+            return redirect(checkout_session.url, code=303)
         else:
-            # error message
-            pass
+            return redirect('home')
     else:
         form = BookingForm()
         property = None
