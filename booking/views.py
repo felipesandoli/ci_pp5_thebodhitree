@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 import stripe
@@ -34,8 +33,11 @@ def booking(request, property_id=None):
             booking.update_price_total()
             booking.save()
             stripe.api_key = settings.STRIPE_SECRET_KEY
-            # from stripe documentation
-            YOUR_DOMAIN = 'http://127.0.0.1:8000/'
+            # Change domain if production or development
+            if settings.development:
+                YOUR_DOMAIN = 'http://127.0.0.1:8000/'
+            else:
+                YOUR_DOMAIN = 'https://the-bodhi-tree-b9b27b51f217.herokuapp.com/'
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
