@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-zgg5f-0yy8+t^-!aonylz@oc@@idt*c^%lm72&*#(q6e*hpcb%
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['the-bodhi-tree-b9b27b51f217.herokuapp.com']
 
 
 # Application definition
