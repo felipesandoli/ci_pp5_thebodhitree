@@ -38,7 +38,7 @@ else:
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['https://the-bodhi-tree-04fc7f009761.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['the-bodhi-tree-04fc7f009761.herokuapp.com']
 
 
 # Application definition
