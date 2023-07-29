@@ -52,7 +52,7 @@ def booking(request, property_id=None):
                 ],
                 mode='payment',
                 success_url=YOUR_DOMAIN + f'booking/booking_details/{booking.booking_number}',
-                cancel_url=YOUR_DOMAIN + f'booking/{booking.property.id}',
+                cancel_url=YOUR_DOMAIN + f'booking/cancel/{booking.booking_number}',
             )
             return redirect(checkout_session.url, code=303)
         else:
