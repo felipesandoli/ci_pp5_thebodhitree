@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = DEVELOPMENT
 
 
 ALLOWED_HOSTS = ['the-bodhi-tree-b9b27b51f217.herokuapp.com', '127.0.0.1']
@@ -164,7 +164,7 @@ if not DEVELOPMENT:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     AWS_STORAGE_BUCKET_NAME = 'thebodhitree'
     AWS_S3_REGION_NAME = 'eu-west-2'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
