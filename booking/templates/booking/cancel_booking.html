@@ -11,7 +11,7 @@
                     <a class="text-decoration-none" href="{% url 'property_details' booking.property.id %}">
                         <div class="row featured-property m-3 ">
                             <div class="col-12 p-0">
-                                <img src="{{ booking.property.featured_image.url }}" alt="">
+                                <img src="{{ booking.property.featured_image.url }}" alt="{{ property.name }}">
                             </div>
                             <div class="col-12 p-0">
                                 <div class="col-12 px-5 bg-light py-2">

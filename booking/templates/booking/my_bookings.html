@@ -10,7 +10,7 @@
                 <a class="text-decoration-none" href="{% url 'booking_details' booking.booking_number %}">
                     <div class="row featured-property m-3 border-bottom shadow" style="--bs-border-opacity: .7;">
                         <div class="col-12 col-md-6 col-lg-4 p-0">
-                            <img src="{{ booking.property.featured_image.url }}" alt="">
+                            <img src="{{ booking.property.featured_image.url }}" alt="{{ property.name }}">
                         </div>
                         <div class="col-12 col-md-6 col-lg-8 bg-light py-2 px-5">
                             <h2 class="custom-text-dark">{{ booking.property.name }}</h2>

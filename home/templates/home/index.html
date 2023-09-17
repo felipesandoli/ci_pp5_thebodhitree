@@ -19,7 +19,7 @@
                     <a class="text-decoration-none" href="{% url 'property_details' property.id %}">
                         <div class="row featured-property m-3 border-bottom shadow">
                             <div class="col-12 col-md-6 col-lg-4 p-0">
-                                <img src="{{ property.featured_image.url }}" alt="">
+                                <img src="{{ property.featured_image.url }}" alt="{{ property.name }}">
                             </div>
                             <div class="col-12 col-md-6 col-lg-8 p-0">
                                 <div class="col-12 px-5 bg-light py-2">
