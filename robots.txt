@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://the-bodhi-tree-b9b27b51f217.herokuapp.com/sitemap.xml
