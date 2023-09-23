@@ -24,27 +24,48 @@
     <title>{% block title %}The Bodhi Tree{% endblock %}</title>
 </head>
 <body>
-    <header class="container-fluid p-0 border-bottom shadow" style="--bs-border-opacity: .7;">
-        <!-- Adapted from bootstrap  -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand font-logo custom-text-dark ps-2 p-0" href="{% url 'home' %}">
-                    <img src="{{ MEDIA_URL }}/logo-dark.png" alt="The Bodhi Tree logo" class="logo">
-                    <hr class="w-100 mt-1 mb-0">
-                    <p class="fs-3 m-0">The Bodhi Tree</p>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse pe-2" id="navbarSupportedContent">
-                    {% include 'includes/main-nav.html' %}
-                </div>
-            </div>
-          </nav>
-    </header>
     <div class="container-fluid">
-        {% block content %}
-        {% endblock %}
+        <div class="row">
+            <header class="p-0 border-bottom shadow">
+                <!-- Adapted from bootstrap  -->
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand font-logo custom-text-dark ps-2 p-0" href="{% url 'home' %}">
+                            <img src="{{ MEDIA_URL }}/logo-dark.png" alt="The Bodhi Tree logo" class="logo">
+                            <hr class="w-100 mt-1 mb-0">
+                            <p class="fs-3 m-0">The Bodhi Tree</p>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse pe-2" id="navbarSupportedContent">
+                            {% include 'includes/main-nav.html' %}
+                        </div>
+                    </div>
+                  </nav>
+            </header>
+        </div>
+        <div class="row mb-5">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="row">
+            <footer class="d-flex flex-wrap justify-content-around align-items-center custom-bg-dark custom-text-light p-3 m-auto">
+                <span class="m-3">© 2023 The Bodhi Tree</span>
+                
+                <a href="https://www.facebook.com/profile.php?id=61551806339528" target="_blank" class="font-logo text-decoration-none custom-text-light">
+                    <span>
+                        Follow us on Facebook
+                    </span>
+                    <span>
+                        <i class="fa-brands fa-facebook fa-xl"></i>
+                    </span>
+                </a>
+                <!-- <span class="m-3">
+                    Follow us on Facebook <a href="https://www.facebook.com/profile.php?id=61551806339528" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </span> -->
+            </footer>
+        </div>
     </div>
 </body>
 </html>
