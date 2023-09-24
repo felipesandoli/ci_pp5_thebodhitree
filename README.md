@@ -169,4 +169,9 @@ The future features and improvements already idealized for the website:
 - Implement a scheduling system so properties cannot be double booked for the same dates. At the moment there is no feature to block this from happening.
 - Implement security features that creates a booking only upon successfull payment. Currently, the booking is created upon submission of the form and before payment is concluded.
 - Send email confirmation upon booking confirmation so user can be guaranteed to receive all booking information in case the booking confirmation page is not presented to the user.
-- Display total price on booking form page, so user can see the full price before submitting the form. 
+- Display total price on booking form page, so user can see the full price before submitting the form.
+
+## Validation
+
+### HTML Validation
+
