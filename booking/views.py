@@ -37,11 +37,14 @@ def booking(request, property_id=None):
             if settings.DEVELOPMENT:
                 YOUR_DOMAIN = 'http://127.0.0.1:8000/'
             else:
-                YOUR_DOMAIN = 'https://the-bodhi-tree-b9b27b51f217.herokuapp.com/'
+                YOUR_DOMAIN = (
+                    'https://the-bodhi-tree-b9b27b51f217.herokuapp.com/'
+                )
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
-                        # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                        # Provide the exact Price ID (for example, pr_1234)
+                        # of the product you want to sell
                         'price_data': {
                             'currency': 'gbp',
                             'product_data': {
@@ -53,8 +56,10 @@ def booking(request, property_id=None):
                     },
                 ],
                 mode='payment',
-                success_url=YOUR_DOMAIN + f'booking/booking_details/{booking.booking_number}',
-                cancel_url=YOUR_DOMAIN + f'booking/cancel/{booking.booking_number}',
+                success_url=YOUR_DOMAIN
+                + f'booking/booking_details/{booking.booking_number}',
+                cancel_url=YOUR_DOMAIN
+                + f'booking/cancel/{booking.booking_number}',
             )
             return redirect(checkout_session.url, code=303)
         else:

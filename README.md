@@ -175,3 +175,18 @@ The future features and improvements already idealized for the website:
 
 ### HTML Validation
 
+After fixing a few errors such as wrong closing tags and invalid tags, all pages passed W3C HTML validation.
+
+![homepage HTML validation](docs/README_docs/homepage-html-validation.png)
+
+### CSS Validation
+
+Custom CSS was validated using W3C CSS Validator and passed with no issues
+
+![CSS validation](docs/README_docs/css-validator.png)
+
+## Lighthouse
+
+A good performance of Lighthouse validator was observed for Accessibility, Best Practices and SEO, however images could be better sized to improve overall performance.
+
+ ![Lighthouse validation](docs/README_docs/lighthouse.png)
