@@ -274,7 +274,7 @@ web: gunicorn project_name.wsgi
 
  ## Credits
 
- - Shinrin Yoky cover image: photo by [Pixabay](https://www.pexels.com/photo/view-of-building-exterior-327483/)
+ - Shinrin Yoku cover image: photo by [Pixabay](https://www.pexels.com/photo/view-of-building-exterior-327483/)
  - Villa Lucinda cover image: photo by [David Bartus](https://www.pexels.com/photo/potter-plants-on-stairs-of-building-1509803/)
  - Gudmundur's Cabin cover image: photo by [Michal Prucha](https://unsplash.com/photos/qVKLnAbqZ_0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
  - Datepicker: [Stack Overflow](https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django)
