@@ -43,3 +43,21 @@ GitHub Issues was used to document the User Stories used to develop the website.
 ## Design
 
 ### Wireframes
+
+The bellow wireframes were created for designing the website main pages, which are the home page and the event detail page. The website is responsive and works well with most screens sizes, mobile and lapatops layout were prioritized.
+
+All other pages were built on top of the main page desgin without need for other wireframes.
+
+![Wireframes](docs/README_docs/The-Bodhi-Tree-Wireframes.png)
+
+### Data Models
+
+The below diagram illustrates the data models initially idealized for the project. Slight alterations were made to the actual data models during development. The Image model was initially idealized to be used as a library for images to be displayed at a property details page, this will be implemented at a future release.
+
+![Data Models](docs/README_docs/data-models.png)
+
+### Agile Methodology
+
+Github Projects Kanban Board and GitHub Issues was used to document project development. Milestones were created to record development iterations with relevant prioritization.
+
+![Kanban Board](docs/README_docs/kanban-board.png)
