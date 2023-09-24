@@ -1,68 +1,106 @@
 {% extends 'base.html' %}
-
 {% block title %} {{ block.super }} | home {% endblock %}
-
 {% block content %}
-    <section>
-        <div class="container-fluid">
-            <h1 class="text-danger pt-5 ps-3 pb-2">You are canceling your stay at</h1>
-            <div class="row">
-                <div class="col-12 col-md-6 border-bottom shadow">
-                    <a class="text-decoration-none" href="{% url 'property_details' booking.property.id %}">
-                        <div class="row featured-property m-3 ">
-                            <div class="col-12 p-0">
-                                <img src="{{ booking.property.featured_image.url }}" alt="{{ property.name }}">
-                            </div>
-                            <div class="col-12 p-0">
-                                <div class="col-12 px-5 bg-light py-2">
-                                    <h2 class="custom-text-dark">{{ booking.property.name }}</h2>
-                                    <p class="custom-text-dark">{{ booking.property.description }}</p>
-                                </div>
-                                <div class="row custom-text-dark px-5 pt-2">
-                                    <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-sterling-sign"></i> {{ booking.property.price_per_night }} per night</div>
-                                    <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-bed"></i> {{ booking.property.number_of_bedrooms }} bedrooms</div>
-                                    <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-bath"></i> {{ booking.property.number_of_bathrooms }} bathrooms</div>
-                                    <div class="col-12 col-md-6 col-lg-3 py-3"><i class="fa-sharp fa-solid fa-location-dot"></i> {{ booking.property.city }}, {{ booking.property.country.name }}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-md-6 p-3 custom-text-dark booking-details">
-                    <h2>Booking Details</h2>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Booking Number:</strong></div>
-                        <div class="col-9">{{ booking.booking_number }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Check In Date:</strong></div>
-                        <div class="col-9">{{ booking.checkin_date }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Check Out Date:</strong></div>
-                        <div class="col-9">{{ booking.checkout_date }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Number of Guests:</strong></div>
-                        <div class="col-9">{{ booking.number_of_guests }}</div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-3"><strong>Amount Paid:</strong></div>
-                        <div class="col-9">{{ booking.price_total }}</div>
-                    </div>
-                    <div class="row pb-3 mt-3">
-                        <div class="col-6">
-                            <p><strong>Are you sure you would like to cancel your stay?</strong></p>
-                        </div>
-                        <div class="col-6 h-auto">
-                            <form method="POST">
-                                {% csrf_token %}
-                                <button type="submit" class="submit-btn">Cancel Booking</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+<section>
+  <div class="container-fluid">
+    <h1 class="text-danger pt-5 ps-3 pb-2">You are canceling your stay at
+    </h1>
+    <div class="row">
+      <div class="col-12 col-md-6 border-bottom shadow">
+        <a class="text-decoration-none" href="{% url 'property_details' booking.property.id %}">
+          <div class="row featured-property m-3 ">
+            <div class="col-12 p-0">
+              <img src="{{ booking.property.featured_image.url }}" alt="{{ property.name }}">
             </div>
+            <div class="col-12 p-0">
+              <div class="col-12 px-5 bg-light py-2">
+                <h2 class="custom-text-dark">{{ booking.property.name }}
+                </h2>
+                <p class="custom-text-dark">{{ booking.property.description }}
+                </p>
+              </div>
+              <div class="row custom-text-dark px-5 pt-2">
+                <div class="col-12 col-md-6 col-lg-3 py-3">
+                  <i class="fa-sharp fa-solid fa-sterling-sign">
+                  </i> {{ booking.property.price_per_night }} per night
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-3">
+                  <i class="fa-sharp fa-solid fa-bed">
+                  </i> {{ booking.property.number_of_bedrooms }} bedrooms
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-3">
+                  <i class="fa-sharp fa-solid fa-bath">
+                  </i> {{ booking.property.number_of_bathrooms }} bathrooms
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 py-3">
+                  <i class="fa-sharp fa-solid fa-location-dot">
+                  </i> {{ booking.property.city }}, {{ booking.property.country.name }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-6 p-3 custom-text-dark booking-details">
+        <h2>Booking Details
+        </h2>
+        <div class="row pb-3">
+          <div class="col-3">
+            <strong>Booking Number:
+            </strong>
+          </div>
+          <div class="col-9">{{ booking.booking_number }}
+          </div>
         </div>
-    </section>
+        <div class="row pb-3">
+          <div class="col-3">
+            <strong>Check In Date:
+            </strong>
+          </div>
+          <div class="col-9">{{ booking.checkin_date }}
+          </div>
+        </div>
+        <div class="row pb-3">
+          <div class="col-3">
+            <strong>Check Out Date:
+            </strong>
+          </div>
+          <div class="col-9">{{ booking.checkout_date }}
+          </div>
+        </div>
+        <div class="row pb-3">
+          <div class="col-3">
+            <strong>Number of Guests:
+            </strong>
+          </div>
+          <div class="col-9">{{ booking.number_of_guests }}
+          </div>
+        </div>
+        <div class="row pb-3">
+          <div class="col-3">
+            <strong>Amount Paid:
+            </strong>
+          </div>
+          <div class="col-9">{{ booking.price_total }}
+          </div>
+        </div>
+        <div class="row pb-3 mt-3">
+          <div class="col-6">
+            <p>
+              <strong>Are you sure you would like to cancel your stay?
+              </strong>
+            </p>
+          </div>
+          <div class="col-6 h-auto">
+            <form method="POST">
+              {% csrf_token %}
+              <button type="submit" class="submit-btn">Cancel Booking
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

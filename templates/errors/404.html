@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 <div class="conteiner-fluid">
-    <div class="row">
-        <div class="col-12 col-md-6 m-auto">
-            <h1 class="custom-text-dark fs-1s pt-5 ps-3 pb-2">There's nothing to see here</h1>
-        </div>
-        <div class="col-3 d-flex flex-row-reverse">
-            <a href="{% url 'home'  %}" class="action-btn font-logo">HOME</a>
-        </div>
+  <div class="row">
+    <div class="col-12 col-md-6 m-auto">
+      <h1 class="custom-text-dark fs-1s pt-5 ps-3 pb-2">There's nothing to see here
+      </h1>
     </div>
+    <div class="col-3 d-flex flex-row-reverse">
+      <a href="{% url 'home'  %}" class="action-btn font-logo">HOME
+      </a>
+    </div>
+  </div>
 </div>
-
 {% endblock %}
