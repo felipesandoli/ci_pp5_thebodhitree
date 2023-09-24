@@ -21,6 +21,7 @@
     - [View All Properties](#view-all-properties)
     - [Property Details](#property-details)
     - [Creating a Booking and Booking Management](#creating-a-booking-and-booking-management)
+- [Future Features and Improvements](#future-features-and-improvements)
 
 
 ## Project Overview
@@ -158,3 +159,14 @@ After the successful payment, the user is then redirected to the booking details
 If the user is authenticated, the created booking will be saved to their account and can be accessed through the My Bookings link in the navigation menu. Otherwise, the user can also view their booking, by using the retrieved my booking link, by entering their booking reference number.
 
 ![retrieve booking](docs/README_docs/retrieve-booking.png)
+
+## Future Features and Improvements
+
+The future features and improvements already idealized for the website:
+
+- Allow users to give reviews about the properties and display these on the property details page.
+- Add more images in the format of a library, so the user can have a better idea of what the property looks like.
+- Implement a scheduling system so properties cannot be double booked for the same dates. At the moment there is no feature to block this from happening.
+- Implement security features that creates a booking only upon successfull payment. Currently, the booking is created upon submission of the form and before payment is concluded.
+- Send email confirmation upon booking confirmation so user can be guaranteed to receive all booking information in case the booking confirmation page is not presented to the user.
+- Display total price on booking form page, so user can see the full price before submitting the form. 
