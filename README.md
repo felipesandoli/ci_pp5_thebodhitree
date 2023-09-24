@@ -13,6 +13,15 @@
     - [Wireframes](#wireframes)
     - [Data Model](#data-model)
     - [Agile Methodology](#agile-methodology)
+- [Technologies](#technologies)
+    - [Languages](#languages)
+    - [Frameworks, Libraries, Softwares and Services](#frameworks-libraries-softwares-and-services)
+- [Features](#features)
+    - [Home Page, Navigation and Authentication](#home-page-navigation-and-authentication)
+    - [View All Properties](#view-all-properties)
+    - [Property Details](#property-details)
+    - [Creating a Booking and Booking Management](#creating-a-booking-and-booking-management)
+
 
 ## Project Overview
 
@@ -61,3 +70,91 @@ The below diagram illustrates the data models initially idealized for the projec
 Github Projects Kanban Board and GitHub Issues was used to document project development. Milestones were created to record development iterations with relevant prioritization.
 
 ![Kanban Board](docs/README_docs/kanban-board.png)
+
+## Technologies
+
+### Languages
+
+- HTML5
+- CSS3
+- Python
+
+### Frameworks, Libraries, Softwares and Services
+
+- Django
+- Amazon AWS
+- Stripe Payment
+- Mailchimp
+- Django Crispy Forms
+- Elephant SQL
+- Boostrap 5
+- Lucid Charts
+- PostgreSQL
+- Gunicorn
+- Heroku
+- Git
+- GitHub
+- Font Awesome
+- Google Fonts
+- dbdiagram.io
+
+## Features
+
+### Home Page, Navigation and Authentication
+
+The navigation bar consists of a logo that act as a link back to the home page and a navigation menu collapsable into a hamburger menu on mobile phones. the navigation menu has different options that depends on an user being authenticated or not.
+
+The links on the navigation menu can be used to access the home page, to view all properties and to view the user's bookings if they are authenticated or access the booking retrieval form otherwise.
+
+Through the navigation menu the user can also create a new account, or log in/out of their existing one.
+
+The first section of the home page lists the featured properties. These are properties that the site owner would like to give priority to be advertised.
+
+The home page also contains an about us section, where the user can get to know more about the business and a form where the user can enter their email to subscribe to a newsletter, in order to keep up to date with promotions or information surrouding, meditation, mindfullness, nature among other things.
+
+![homepage](docs/README_docs/home-page.png)
+
+### View All Properties
+
+In this page the user can view a list of all available properties. Each property information card works as a link to the property details page.
+
+![all properties](docs/README_docs/all-properties.png)
+
+### Property Details
+
+Here the user can find out more about the property with a more complete description and more information about the amenities. This is also where the property library will be displayed at a future implementation.
+
+This page also contains a button to take the user to the form that will allow them to make a reservation.
+
+![property details](docs/README_docs/property-details.png)
+
+### Creating a Booking and Booking Management
+
+For creating a booking the user must submit a form with the following information.
+
+- Full Name
+- Email Address
+- Phone Number
+- Address
+- City
+- Country
+- Checkin and Checkout Dates
+- Number of Guests
+
+![booking form](docs/README_docs/booking-form.png)
+
+Upon successfull submission of the form, the user is redirected to the stripe payment page where they can pay for their booking.
+
+![payment form](docs/README_docs/payment-form.png)
+
+After the successful payment, the user is then redirected to the booking details page, where they can confirm the booking details and also edit or cancel their booking.
+
+![booking confirmation](docs/README_docs/booking-confirmation.png)
+
+![update booking personal information](docs/README_docs/update-booking-personal-info.png)
+
+![booking cancelation](docs/README_docs/cancel-booking.png)
+
+If the user is authenticated, the created booking will be saved to their account and can be accessed through the My Bookings link in the navigation menu. Otherwise, the user can also view their booking, by using the retrieved my booking link, by entering their booking reference number.
+
+![retrieve booking](docs/README_docs/retrieve-booking.png)
