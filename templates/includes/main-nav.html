@@ -1,13 +1,13 @@
 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-    <li class="nav-item nav-hover border-bottom shadow-sm">
+    <li class="nav-item nav-hover">
       <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home
       </a>
     </li>
-    <li class="nav-item nav-hover border-bottom shadow-sm">
+    <li class="nav-item nav-hover">
       <a class="nav-link" href="{% url 'all_properties' %}">View all Properties
       </a>
     </li>
-    <li class="nav-item nav-hover border-bottom shadow-sm">
+    <li class="nav-item nav-hover">
       {% if user.is_authenticated %}
       <a class="nav-link" href="{% url 'my_bookings' %}">My Bookings
       </a>
@@ -16,7 +16,7 @@
       </a>
       {% endif %}
     </li>
-    <li class="nav-item dropdown border-bottom shadow-sm">
+    <li class="nav-item dropdown">
       <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <div class="circle-icon">
           <i class="fas fa-user">
